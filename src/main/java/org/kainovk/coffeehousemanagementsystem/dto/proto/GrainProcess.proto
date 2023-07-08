@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package org.kainovk.coffeehousemanagementsystem.service.grpc;
+
+option java_multiple_files = true;
+
+service GrainProcessService {
+  rpc process(GrainProcessRequest) returns (GrainProcessResponse) {}
+}
+
+message GrainProcessRequest {
+  int64 weight = 1;
+  string countryName = 2;
+  string grainType = 3;
+  int64 finalWeight = 4;
+  string brigadeUUID = 5;
+}
+
+message GrainProcessResponse {
+  string message = 1;
+}
